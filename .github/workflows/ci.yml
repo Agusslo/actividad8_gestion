@@ -12,24 +12,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Clonar el repositorio completo (requerimiento para SonarCloud)
       - name: Checkout del repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2. Configuración del entorno de Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      # 3. Instalación de dependencias mitigando riesgos de ejecución de scripts
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --ignore-scripts --no-audit
 
-      - name: Ejecutar pruebas y generar reporte de cobertura
+      # 4. Ejecución de pruebas unitarias y generación de cobertura
+      - name: Ejecutar pruebas y cobertura
         run: npm test
 
+      # 5. Análisis estático SAST con SonarCloud (versión estable fijada)
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@v3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.sources=src
+            -Dsonar.tests=tests
