@@ -1,0 +1,12 @@
+{
+  "name": "actividad8_gestion",
+  "version": "1.0.0",
+  "description": "TP Actividad 8 - DevSecOps y Calidad",
+  "main": "src/calculadora.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
