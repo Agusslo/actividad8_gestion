@@ -1,0 +1,40 @@
+name: CI Pipeline - Calidad y DevSecOps
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-test-sonar:
+    name: Build, Tests y Análisis SAST
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clonar repositorio completo para atribución de SonarCloud
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3. Instalar dependencias
+      - name: Instalar dependencias
+        run: npm install
+
+      # 4. Ejecutar pruebas y generar reporte de cobertura
+      - name: Ejecutar pruebas y cobertura
+        run: npm test
+
+      # 5. Ejecutar análisis estático con SonarCloud
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
