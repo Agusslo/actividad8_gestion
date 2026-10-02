@@ -20,7 +20,7 @@ jobs:
 
       # 2. Configuración del entorno de Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -37,7 +37,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.TOKEN_SONAR }}
         with:
           args: >
             -Dsonar.sources=src
