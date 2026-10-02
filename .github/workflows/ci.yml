@@ -40,5 +40,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
+            -Dsonar.projectKey=Agusslo_actividad8_gestion
+            -Dsonar.organization=agusslo
             -Dsonar.sources=src
             -Dsonar.tests=tests
