@@ -32,7 +32,7 @@ jobs:
       - name: Ejecutar pruebas y cobertura
         run: npm test
 
-      # 5. Análisis estático SAST con SonarCloud (versión estable fijada)
+# 5. Análisis estático SAST con SonarCloud (versión estable fijada)
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v3.1.0
         env:
