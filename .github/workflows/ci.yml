@@ -26,7 +26,7 @@ jobs:
 
       # 3. Instalación de dependencias mitigando riesgos de ejecución de scripts
       - name: Instalar dependencias
-        run: npm install --ignore-scripts --no-audit
+        run: npm ci --ignore-scripts --no-audit
 
       # 4. Ejecución de pruebas unitarias y generación de cobertura
       - name: Ejecutar pruebas y cobertura
