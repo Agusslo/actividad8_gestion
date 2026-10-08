@@ -20,7 +20,7 @@ jobs:
 
       # 2. Configuración del entorno de Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 18
 
