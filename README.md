@@ -8,7 +8,7 @@ Este repositorio contiene la implementación práctica y teórica correspondient
 
 * **Nombre y Apellido** - Agustín Nicolás López
 * **Nombre y Apellido** - Florencia Arai Frettes
-* **Nombre y Apellido** - Rol / Aportes
+* **Nombre y Apellido** - Miguel Jose Caputo
 * **Nombre y Apellido** - Rol / Aportes
 
 ---
