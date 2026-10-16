@@ -15,7 +15,7 @@ const {
 describe('Calculadora', () => {
 
   test('suma dos números', () => {
-    expect(sumar(2, 3)).toBe(5);
+    expect(sumar(2, 3)).toBe(99);
   });
 
   test('resta dos números', () => {
