@@ -7,7 +7,7 @@ Este repositorio contiene la implementación práctica y teórica correspondient
 ## 👥 Integrantes del Equipo (Equipo #10)
 
 * **Nombre y Apellido** - Agustín Nicolás López
-* **Nombre y Apellido** - Rol / Aportes
+* **Nombre y Apellido** - Florencia Arai Frettes
 * **Nombre y Apellido** - Rol / Aportes
 * **Nombre y Apellido** - Rol / Aportes
 
